@@ -43,7 +43,7 @@ app.put('/image',(req,res)=>handleImage(req,res,db))
 app.post('/imageUrl',(req,res)=>handleApi(req,res))
 
 
-// const PORT=process.env.PORT;
- app.listen(3001,()=>{
-     console.log(`i am alivee at `)
+ const PORT=process.env.PORT;
+ app.listen(PORT,()=>{
+     console.log(`i am alivee at ${PORT}`)
  })
