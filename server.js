@@ -25,6 +25,8 @@ const db=knex({
  app.use(cors());
 
 
+ app.get('/',(req,res)=>{res.send("I am alive bitch")})
+
  // signin -->POST =sucess/fail
  app.post('/signin',(req,res)=>handleSignin(req,res,db,bcrypt) )
 
