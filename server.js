@@ -27,23 +27,23 @@ const db=knex({
 
  app.get('/',(req,res)=>{res.send("I am alive bitch")})
 
- // signin -->POST =sucess/fail
- app.post('/signin',(req,res)=>handleSignin(req,res,db,bcrypt) )
+//  // signin -->POST =sucess/fail
+//  app.post('/signin',(req,res)=>handleSignin(req,res,db,bcrypt) )
 
-//signup ---->POST =user
-app.post('/signup',(req,res)=> handleSignup(req,res,db,bcrypt))
-
-
-//profile/:userid POST-->get usr
-app.post('/profile/:id',(req,res)=>handleProfile(req,res,db) )
-
-// /image  PUT -->update entry
-
-app.put('/image',(req,res)=>handleImage(req,res,db))
-app.post('/imageUrl',(req,res)=>handleApi(req,res))
+// //signup ---->POST =user
+// app.post('/signup',(req,res)=> handleSignup(req,res,db,bcrypt))
 
 
- const PORT=process.env.PORT;
+// //profile/:userid POST-->get usr
+// app.post('/profile/:id',(req,res)=>handleProfile(req,res,db) )
+
+// // /image  PUT -->update entry
+
+// app.put('/image',(req,res)=>handleImage(req,res,db))
+// app.post('/imageUrl',(req,res)=>handleApi(req,res))
+
+
+ const PORT=process.env.PORT|| 3001;
  app.listen(PORT,()=>{
      console.log(`i am alivee at ${PORT}`)
  })
