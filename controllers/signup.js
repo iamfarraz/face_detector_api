@@ -1,6 +1,9 @@
 export const handleSignup=(req,res,db,bcrypt)=>{
     const {name,email,password}=req.body;
    const hash=bcrypt.hashSync(password);
+   if(!name || !email || !password){
+       return res.status(400).json("unable to register")
+   }
 
 //retruning is knex method to tell which column is to be returned from db to server
    db.transaction(trx=>{

@@ -7,7 +7,7 @@ import knex from 'knex';
 import {handleSignup} from './controllers/signup.js';
 import {handleSignin} from './controllers/signin.js';
 import {handleProfile} from './controllers/profile.js';
-import {handleImage} from './controllers/image.js';
+import {handleImage,handleApi} from './controllers/image.js';
 const db=knex({
     client: 'pg',
     connection: {
@@ -38,9 +38,10 @@ app.post('/profile/:id',(req,res)=>handleProfile(req,res,db) )
 // /image  PUT -->update entry
 
 app.put('/image',(req,res)=>handleImage(req,res,db))
+app.post('/imageUrl',(req,res)=>handleApi(req,res))
 
 
-
- app.listen(3001,()=>{
-     console.log(" i am aliveee")
+const PORT=process.env.PORT;
+ app.listen(PORT,()=>{
+     console.log(`i am alivee at ${PORT}`)
  })
